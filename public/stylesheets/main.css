@@ -11,7 +11,7 @@
 .responsive {
   width: 60%;
   height: auto;
-  
+
 }
 
 
@@ -42,6 +42,10 @@ h2{
 	text-align:center;
 	color:#600080;
 }
+h3{
+	text-align:center;
+}
+
 
 .bato{
 	background-color:#600080
@@ -51,12 +55,12 @@ h2{
   object-fit: cover;
   width: 180px;
   height: 140px;
-padding-right:5px;	
+padding-right:5px;
 }
 
 .card-col{
 	background-color:#600080
-    
+
 }
 
 .square {
@@ -126,7 +130,7 @@ padding-right:5px;
   border-bottom: 1px solid #bdb8d7;
   border-bottom: 1px solid rgba(0,0,0,0.05);
   border-top: 1px solid rgba(255,255,255,0.05);
-}    
+}
 
 .wrapper .sidebar ul li a{
   color: #bdb8d7;
@@ -140,11 +144,11 @@ padding-right:5px;
 .wrapper .sidebar ul li:hover{
   background-color: #594f8d;
 }
-    
+
 .wrapper .sidebar ul li:hover a{
   color: #fff;
 }
- 
+
 .wrapper .sidebar .social_media{
   position: absolute;
   bottom: 0;
@@ -186,4 +190,8 @@ padding-right:5px;
 
 .wrapper .main_content .info div{
   margin-bottom: 20px;
+}
+
+.input-group.md-form.form-sm.form-2 input.lime-border {
+  border: 2px solid #600080;
 }
