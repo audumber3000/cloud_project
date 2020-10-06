@@ -4,6 +4,7 @@
     passport  =             require("passport"),
 	LocalStrategy =        require("passport-local"),
 	mongoose    = require("mongoose"),
+   request = require('request'),
 	User = require("./model/user")
 
 var flash = require("connect-flash");
@@ -47,23 +48,41 @@ app.use(express.static("public"));
 
 
 app.get("/", function(req, res){
-    res.render("home" , {CurrentUser:req.user});
+
+
+
+  request('http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=7eb307c381f8431baa3202bdeb190932', function (error, response, body) {
+    console.error('error:', error); // Print the error if one occurred
+    console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+    // console.log('body:', (body['totalResults'])); // Print the HTML for the Google homepage.
+    var data = JSON.parse(body);
+    var arti = data['articles'];
+
+    res.render("home" , {CurrentUser:req.user ,  arti:arti});
+  });
+
+
+
 });
 app.get("/courses/class11-12", function(req, res){
-    res.render("courses/class11-12");
+    res.render("courses/class11-12" , {CurrentUser:req.user});
 });
 app.get("/courses/class8-10", function(req, res){
-    res.render("courses/class8-10");
+    res.render("courses/class8-10" , {CurrentUser:req.user});
 });
-app.get("/courses/enginnering", function(req, res){
-    res.render("courses/enginnering");
+app.get("/courses/engineering", function(req, res){
+    res.render("courses/engineering", {CurrentUser:req.user});
 });
 app.get("/courses/medical", function(req, res){
-    res.render("courses/medical");
+    res.render("courses/medical" , {CurrentUser:req.user});
+});
+
+app.get("/courses/syllabus", function(req, res){
+    res.render("courses/syllabus"  , {CurrentUser:req.user});
 });
 
 app.get("/offer" , function(req,res){
-	
+
 	res.render("offer" , {CurrentUser:req.user})
 })
 
@@ -75,11 +94,11 @@ app.get("/login" , function(req,res){
 })
 
 app.post("/login",passport.authenticate("local",{
-	
+
 	successRedirect : "/offer",
 	failureRedirect : "/login"
 }),function(req,res){
-	
+
 })
 
 
@@ -89,7 +108,7 @@ app.get("/register" ,function(req,res){
 	})
 
 app.post("/register" ,function(req,res){
-	
+
 	var newUser  = new User({username:req.body.username});
 	User.register(newUser,req.body.password,function(err,user){
 		console.log(newUser);
@@ -98,11 +117,11 @@ app.post("/register" ,function(req,res){
 			console.log("smthing went wrong")
 			 res.render("register")
 		}
-			
+
 		passport.authenticate("local")(req,res,function(){
 		res.redirect("/offer")
 		})
-	
+
 	})
 })
 
@@ -136,4 +155,3 @@ app.get("/logout",function(req,res){
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("server started...")
 });
-		

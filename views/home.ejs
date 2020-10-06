@@ -3,89 +3,44 @@
 
 
 <div class="container">
-	
 
-<h2 class="audu2">
-	Hey, i am <strong>Edu</strong> your Assistant!
-</h2>
-	
-<div class="text-center">
-  <img src="https://st2.depositphotos.com/3126965/6508/v/450/depositphotos_65084215-stock-illustration-female-call-centre-operator.jpg" alt="Avatar" class="responsive rounded"> 
-</div>
-	 
 
-	
-<div class="card1 card text-center">
- 
-  <div class="card-body">
-    <h5 class="card-title" style="color:white">What do you study?</h5>
-	  
-	 <form>
-		 
-	  
-	  <div class="form-group">
-    
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Class 8-10</option>
-      <option>class 11-12</option>
-      <option>Engineering</option>
-      <option>Medical</option>
-      <option>Commerce</option>
-		<option>Arts</option>
-    </select>
-  </div>
-   
-    <a href="#" class="btn btn-primary card-title">Search</a>
-		 </form> 
-  </div>
-  
-</div>
-	
-	
-	
-	
 
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-<div class="card2">
-		<div class="card ">
-  <h5 style="color:white;" class="card-col card-header">Latest | Location:India | <span class="badge badge-secondary">Open</span></h5>
-  <div class="card-body">
-	  <img src="https://www.arcgis.com/sharing/rest/content/items/6c036c09c490450db100cbf867c7688a/resources/1571940616424.png?w=3340" class="rounded cover float-left" />
-    <h5 class="card-title">Education policy 2020</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Detail</a>
-	  <a href="#" class="btn btn-primary">View</a>
-	  
-  </div>
-</div>
-	
+	<div class="input-group md-form form-sm form-2 pl-0">
+	  <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search">
+	  <div class="input-group-append">
+	    <span class="input-group-text lime lighten-2" id="basic-text1"><i class="fas fa-search text-grey"
+	        aria-hidden="true"></i></span>
+	  </div>
 	</div>
 
-	
+
+
+
+
+<%for(var i = 0 ; i<5 ; i++){ %>
+
+
+
+
+
 	<div class="card2">
-		<div class="card">
-  <h5 style="color:white;" class="card-col card-header">Latest | Location:India | <span class="badge badge-secondary">Open</span></h5>
-  <div class="card-body">
-	  <img src="https://images.newindianexpress.com/uploads/user/imagelibrary/2020/7/30/w900X450/Photosoftheweek9.jpg" class="rounded cover float-left" />
-    <h5 class="card-title">Education policy 2020</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Detail</a>
-	  <a href="#" class="btn btn-primary">View</a>
-	  
-  </div>
-</div>
+			<div class="card ">
+	  <h5 style="color:white;" class="card-col card-header">Latest | Publised : <%=arti[i].publishedAt%> | <span class="badge badge-secondary">By:<%=arti[i].author%></span></h5>
+	  <div class="card-body">
+		  <img src="<%=arti[i].urlToImage%>" class="rounded cover float-left" />
+	    <h5 class="card-title"><%=arti[i].title%></h5>
+	    <p class="card-text"><%=arti[i].content%></p>
+	    <a href= "<%=arti[i].url%>" class="btn btn-primary">Detail</a>
+		  <a href="<%=arti[i].url%>" class="btn btn-primary">View</a>
+
+	  </div>
 	</div>
- 
-	
+
+		</div>
+<%}%>
+
+
 	<div id="achivement">
 	<div class="square"></div>
 	<div class="square"></div>
@@ -94,15 +49,14 @@
 	<div class="square"></div>
 	<div class="square"></div>
 </div>
-	
-	
-	
-	
 
-	
-	
-	
-	
-	
+
+
+
+
+
+
 </div>
 
+
+</div>
