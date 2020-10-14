@@ -75,14 +75,36 @@ padding-right:5px;
 	-moz-transition: background 0.6s;
 }
 
+.bg-assistance{
+  background-color:#600080;
+	color : white;
+}
+
 #achivement {
 	margin: 20px auto;
 	max-width: 600px;
 }
 
+#gap_assistance{
+	padding-top: 15px;
+}
 
+.join{
+	background-color: green;
+	color: white;
+}
 
+.join_btn{
+	background-color: black;
+	color: white;
+}
 
+#vol_logo{
+	display: block;
+ margin-left: auto;
+ margin-right: auto;
+
+}
 
 
 
@@ -195,3 +217,302 @@ padding-right:5px;
 .input-group.md-form.form-sm.form-2 input.lime-border {
   border: 2px solid #600080;
 }
+
+
+/* //otp */
+
+#wrapper {
+  font-family: Lato;
+  font-size: 1.5rem;
+  text-align: center;
+  box-sizing: border-box;
+  color: #333;
+
+  #dialog {
+    border: solid 1px #ccc;
+    margin: 10px auto;
+    padding: 20px 30px;
+    display: inline-block;
+    box-shadow: 0 0 4px #ccc;
+    background-color: #FAF8F8;
+    overflow: hidden;
+    position: relative;
+    max-width: 450px;
+
+    h3{
+      margin: 0 0 10px;
+      padding: 0;
+      line-height: 1.25;
+    }
+
+
+		h5{
+      margin: 0 0 10px;
+      padding: 0;
+      line-height: 1.25;
+    }
+
+    span {
+      font-size: 90%;
+    }
+
+    #form {
+      max-width: 240px;
+      margin: 25px auto 0;
+
+      input {
+        margin: 0 5px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 50px;
+        border: solid 1px #ccc;
+        box-shadow: 0 0 5px #ccc inset;
+        outline: none;
+        width: 20%;
+        transition: all .2s ease-in-out;
+        border-radius: 3px;
+
+        &:focus {
+          border-color: blue;
+          box-shadow: 0 0 5px purple inset;
+        }
+
+        &::selection {
+          background: transparent;
+        }
+      }
+
+      button {
+        margin:  30px 0 50px;
+        width: 100%;
+        padding: 6px;
+        background-color: #B85FC6;
+        border: none;
+        text-transform: uppercase;
+      }
+    }
+
+    button {
+      &.close {
+        border: solid 2px;
+        border-radius: 30px;
+        line-height: 19px;
+        font-size: 120%;
+        width: 22px;
+
+        position: absolute;
+        right: 5px;
+        top: 5px;
+      }
+    }
+
+    div {
+      position: relative;
+      z-index: 1;
+    }
+
+    img {
+      position: absolute;
+      bottom: -70px;
+      right: -63px;
+    }
+  }
+}
+
+
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+	background-color:
+}
+
+#ctr_otp{
+	padding-top: 5%;
+	padding-bottom:5%;
+	background-color:#600080 ;
+	color: white;
+}
+#card1 {
+	position: relative;
+	width: 400px;
+	display: block;
+	margin: 35px auto;
+
+	/* text-align: center; */
+	font-family: 'Source Sans Pro', sans-serif;
+}
+#vol-upper-side {
+	padding: 2em;
+	background-color: #600080;
+	display: block;
+	color: #fff;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+
+
+
+
+/* //otp-succesful-template */
+#card {
+	position: relative;
+	width: 320px;
+	display: block;
+	margin: 40px auto;
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+#upper-side {
+	padding: 2em;
+	background-color: #8BC34A;
+	display: block;
+	color: #fff;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+
+#checkmark {
+	font-weight: lighter;
+	fill: #fff;
+	margin: -3.5em auto auto 20px;
+}
+
+#status {
+	font-weight: lighter;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 1em;
+	margin-top: -.2em;
+	margin-bottom: 0;
+}
+
+#lower-side {
+	padding: 2em 2em 5em 2em;
+	background: #fff;
+	display: block;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+#message {
+ margin-top: -.5em;
+ color: #757575;
+ letter-spacing: 1px;
+}
+
+
+#contBtn {
+	position: relative;
+	top: 1.5em;
+	text-decoration: none;
+	background: #8bc34a;
+	color: #fff;
+	margin: auto;
+	padding: .8em 3em;
+	-webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+	-moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+	box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+	border-radius: 25px;
+	-webkit-transition: all .4s ease;
+		-moz-transition: all .4s ease;
+		-o-transition: all .4s ease;
+		transition: all .4s ease;
+}
+#contBtn:hover {
+	-webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+	-moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+	box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+	-webkit-transition: all .4s ease;
+		-moz-transition: all .4s ease;
+		-o-transition: all .4s ease;
+		transition: all .4s ease;
+}
+
+
+
+
+
+.succ-top-gap{
+	padding-top: 5%;
+}
+
+
+
+
+/* //--otp not successfully */
+#not-welcome-card {
+	position: relative;
+	width: 320px;
+	display: block;
+	margin: 40px auto;
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+#not-welcome-upper-side {
+	padding: 2em;
+	background-color: #ba343b;
+	display: block;
+	color: #fff;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+
+#not-welcome-checkmark {
+	font-weight: lighter;
+	fill: #fff;
+	margin: -3.5em auto auto 20px;
+}
+
+#not-welcome-status {
+	font-weight: lighter;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 1em;
+	margin-top: -.2em;
+	margin-bottom: 0;
+}
+
+#not-welcome-lower-side {
+	padding: 2em 2em 5em 2em;
+	background: #fff;
+	display: block;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+#not-welcome-message {
+ margin-top: -.5em;
+ color: #757575;
+ letter-spacing: 1px;
+}
+
+
+#not-welcome-contBtn {
+	position: relative;
+	top: 1.5em;
+	text-decoration: none;
+	background:#ba343b ;
+	color: #fff;
+	margin: auto;
+	padding: .8em 3em;
+	-webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+	-moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+	box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+	border-radius: 25px;
+	-webkit-transition: all .4s ease;
+		-moz-transition: all .4s ease;
+		-o-transition: all .4s ease;
+		transition: all .4s ease;
+}
+#not-welcome-contBtn:hover {
+	-webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+	-moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+	box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+	-webkit-transition: all .4s ease;
+		-moz-transition: all .4s ease;
+		-o-transition: all .4s ease;
+		transition: all .4s ease;
+}
+
+/* //---------homepage card------------------------------------ */

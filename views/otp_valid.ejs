@@ -1,0 +1,93 @@
+<%- include("./partials/header") %>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!-- <div id="card1"> -->
+<div class="container shadow" id="ctr_otp"  >
+<div id="wrapper">
+  <div id="dialog ">
+
+    <h3 style="color: white; font: 30px Arial, sans-serif"><b>Please enter the 4-digit verification code we sent via SMS:</b></h3>
+    <span style="color: white; font: 30px;">(we want to make sure it's you before proceeding further!)</span>
+
+    <div id="form">
+  <form action="/register" method="post">
+      <input type="text" name="dig1" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+      <input type="text" name="dig2" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+      <input type="text" name="dig3" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+      <input type="text" name="dig4"maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+
+         <input type="hidden" name="username" value=<%=user%> />
+           <input type="hidden" name="password" value=<%=pass%> />
+             <input type="hidden" name="contact" value=<%=cont%> />
+               <input type="hidden" name="otp" value=<%=otp%> />
+      <button type="submit" class="btn btn-primary btn-embossed">Verify</button>
+</form>
+    </div>
+
+    <br>
+    <hr class="style1">
+    <br>
+
+
+
+    <div>
+      <b style="color: white;">Didn't receive the code?</b><br />
+      <div><a href="/not-wel" style="color:#0040ff; font: 15px Arial, sans-serif;">Send Code Again</a></div>
+      <div><a href="/register" style="color:#0040ff; font: 15px Arial, sans-serif;">Change phone number</a></div>
+
+</div>
+
+
+
+<script>
+$(function() {
+  'use strict';
+
+  var body = $('body');
+
+  function goToNextInput(e) {
+    var key = e.which,
+      t = $(e.target),
+      sib = t.next('input');
+
+    if (key != 9 && (key < 48 || key > 57)) {
+      e.preventDefault();
+      return false;
+    }
+
+    if (key === 9) {
+      return true;
+    }
+
+    if (!sib || !sib.length) {
+      sib = body.find('input').eq(0);
+    }
+    sib.select().focus();
+  }
+
+  function onKeyDown(e) {
+    var key = e.which;
+
+    if (key === 9 || (key >= 48 && key <= 57)) {
+      return true;
+    }
+
+    e.preventDefault();
+    return false;
+  }
+
+  function onFocus(e) {
+    $(e.target).select();
+  }
+
+  body.on('keyup', 'input', goToNextInput);
+  body.on('keydown', 'input', onKeyDown);
+  body.on('click', 'input', onFocus);
+
+})
+</script>
+</div>
+</div>
+</div>
+<!-- </div> -->

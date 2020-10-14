@@ -1,143 +1,194 @@
-<%- include("../partials/header") %>
+<html>
+	<head>
+
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+		<title>
+			Education 4 ol
+		</title>
+
+
+</head>
+
+<body>
 
 
 
+	<!-- menu bar -->
+	<div class=" w3-sidebar w3-bar-block w3-border-right" style="display:none ; background-color:#600080" id="mySidebar">
+	<button onclick="w3_close()" class="w3-bar-item w3-large"><strong>Close   &times;</strong></button>
+		<button onclick="w3_close()" class="w3-bar-item w3-large"><strong>Close   &times;</strong></button>
+  <button onclick="w3_close()" class="w3-bar-item w3-large"><strong>Close   &times;</strong></button>
+		<% if(!CurrentUser){ %>
+		<a style="color:white ; font-size: 23px; "><b><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+  <path fill-rule="evenodd" d="M7.646 11.354a.5.5 0 0 1 0-.708L10.293 8 7.646 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
+  <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
+</svg> Login Please! </b></a>
+		<%}else{ %>
+		<a style="color:white ; font-size: 23px; "><strong> Hey, <%= CurrentUser.username %></strong></a>
+		<%} %>
+  <a href="/" class="w3-bar-item w3-button w3-large" style="color:white"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
+  <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+</svg> Home</a>
+
+		<a href="/assistance/assistance" class="w3-bar-item w3-button w3-large" style="color:white"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-question-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.496 6.033a.237.237 0 0 1-.24-.247C5.35 4.091 6.737 3.5 8.005 3.5c1.396 0 2.672.73 2.672 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.105a.25.25 0 0 1-.25.25h-.81a.25.25 0 0 1-.25-.246l-.004-.217c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.803 0-1.253.478-1.342 1.134-.018.137-.128.25-.266.25h-.825zm2.325 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z"/>
+</svg> Assistance</a>
+
+		<a href="/courses/class8-10" class="w3-bar-item w3-button w3-large" style="color:white"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-book-half" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8.5 2.687v9.746c.935-.53 2.12-.603 3.213-.493 1.18.12 2.37.461 3.287.811V2.828c-.885-.37-2.154-.769-3.388-.893-1.33-.134-2.458.063-3.112.752zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg> class 8-10</a>
+
+		<a href="/courses/class11-12" class="w3-bar-item w3-button w3-large" style="color:white"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-book-half" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8.5 2.687v9.746c.935-.53 2.12-.603 3.213-.493 1.18.12 2.37.461 3.287.811V2.828c-.885-.37-2.154-.769-3.388-.893-1.33-.134-2.458.063-3.112.752zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg> class 11-12</a>
+
+		<a href="#" class="w3-bar-item w3-button w3-large" style="color:white"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark-check-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M4 0a2 2 0 0 0-2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4zm6.854 5.854a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+</svg> NEET</a>
+
+		<a href="#" class="w3-bar-item w3-button w3-large" style="color:white"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark-check-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M4 0a2 2 0 0 0-2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4zm6.854 5.854a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+</svg> JEE Mains</a>
+
+		<a href="/courses/engineering" class="w3-bar-item w3-button w3-large" style="color:white"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-code-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM6.646 5.646a.5.5 0 1 1 .708.708L5.707 8l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708l2-2zm2.708 0a.5.5 0 1 0-.708.708L10.293 8 8.646 9.646a.5.5 0 0 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z"/>
+</svg>
+Engineering</a>
+
+		<a href="/courses/medical" class="w3-bar-item w3-button w3-large" style="color:white"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-easel-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8.473.337a.5.5 0 0 0-.946 0L6.954 2h2.092L8.473.337zM12.15 11h-1.058l1.435 4.163a.5.5 0 0 0 .946-.326L12.15 11zM8.5 11h-1v2.5a.5.5 0 0 0 1 0V11zm-3.592 0H3.85l-1.323 3.837a.5.5 0 1 0 .946.326L4.908 11zM1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3z"/>
+</svg> Medical</a>
+
+		<a href="#" class="w3-bar-item w3-button w3-large" style="color:white"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-briefcase-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+  <path fill-rule="evenodd" d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5v1.384l-7.614 2.03a1.5 1.5 0 0 1-.772 0L0 5.884V4.5zm5-2A1.5 1.5 0 0 1 6.5 1h3A1.5 1.5 0 0 1 11 2.5V3h-1v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V3H5v-.5z"/>
+</svg> Payments</a>
+
+		<a href="#" class="w3-bar-item w3-button w3-large" style="color:white"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-plus-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+</svg> Setting</a>
+
+		<a href="#" class="w3-bar-item w3-button w3-large" style="color:white"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-door-closed-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M4 1a1 1 0 0 0-1 1v13H1.5a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2a1 1 0 0 0-1-1H4zm2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+</svg> Logout</a>
+		<a href="#" class="w3-bar-item w3-button w3-large" style="color:white"></a>
+
+		<a href="#" class="text-center" style="color:white">©2020-21 Education4ol</a>
 
 
-<div class=container>
 
-  <table class="table">
-    <thead>
-      <tr>
-
-        <th scope="col"><h3>Study Material 11-12</h3></th>
-
-      </tr>
-    </thead>
-  </table>
 
 </div>
-<div class = "container">
-	<div class="row row-cols-1 row-cols-md-2">
-  <div class="col mb-4">
-    <div class="card">
-      <img src="https://scontent.fpnq13-1.fna.fbcdn.net/v/t1.0-9/p851x315/120953113_168214634946977_8845839104962424777_o.png?_nc_cat=101&_nc_sid=730e14&_nc_ohc=73TnK-zs6ysAX8y8AJb&_nc_ht=scontent.fpnq13-1.fna&oh=f067afbc3653d6ba24defe8085e0b93d&oe=5FA27586" class="card-img-top" alt="...">
-      <div class="card-body">
-        <!-- <h5 class="card-title">Class 11 (All Subject)</h5>
-        <p class="card-text">All the syllabus of class 11 is based on the Latest portion of CBSE , NEET and JEE Mains. </p> -->
-        <button type="button" class="btn btn-success btn-lg btn-block">Block level button</button>
-  <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">View Class-11 Syllabus</button>
-      </div>
 
-      <div class="col">
-          <div class="collapse multi-collapse" id="multiCollapseExample1">
-            <div class="card card-body">
 
-              <table class="table">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">Sr.No</th>
-                    <th scope="col">Subjects</th>
-                    <th scope="col">Details</th>
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
 
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mathematics</td>
-                    <td><button type="button" class="btn btn-link">View</button></td>
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
 
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Physics</td>
-                    <td><button type="button" class="btn btn-link">View</button></td>
 
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Chemistry</td>
-                    <td><button type="button" class="btn btn-link">View</button></td>
 
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Biology</td>
-                    <td><button type="button" class="btn btn-link">View</button></td>
 
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
 
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<nav class="sticky-top navbar navbar-expand-lg navbar-light bg-light">
+		<div class="w3-teal">
+  <button class="userbtn" onclick="w3_open()"><img src="https://img.icons8.com/cotton/48/000000/restaurant-menu.png"/></button>
+  <div class="w3-container">
+
   </div>
+</div>
+	<h1 class="audu1">
+	   Eduol
+		</h1>
 
-  <div class="col mb-4">
-    <div class="card">
-      <img src="https://scontent.fpnq13-1.fna.fbcdn.net/v/t1.0-9/p851x315/120930784_168215578280216_1605907914046945436_o.png?_nc_cat=110&_nc_sid=730e14&_nc_ohc=0AdPhVnlHdkAX_m7saw&_nc_ht=scontent.fpnq13-1.fna&oh=cfa75215659181eeb380217f412253cd&oe=5FA1BA05" class="card-img-top" alt="...">
-      <div class="card-body">
-        <!-- <h5 class="card-title">Class 11 (All Subject)</h5>
-        <p class="card-text">All the syllabus of class 11 is based on the Latest portion of CBSE , NEET and JEE Mains. </p> -->
-        <button type="button" class="btn btn-success btn-lg btn-block">Block level button</button>
-  <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">View Class-12 Syllabus</button>
-      </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-  controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	  <img class="userbtn" src="https://img.icons8.com/officel/45/000000/person-male.png"/>
+    <!-- <span class="navbar-toggler-icon"></span> -->
+  </button>
 
-      <div class="col">
-          <div class="collapse multi-collapse" id="multiCollapseExample2">
-            <div class="card card-body">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
 
-              <table class="table">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">Sr.No</th>
-                    <th scope="col">Subjects</th>
-                    <th scope="col">Details</th>
 
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mathematics</td>
-                    <td><button type="button" class="btn btn-link">View</button></td>
+      </li>
 
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Physics</td>
-                    <td><button type="button" class="btn btn-link">View</button></td>
 
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Chemistry</td>
-                    <td><button type="button" class="btn btn-link">View</button></td>
 
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Biology</td>
-                    <td><button type="button" class="btn btn-link">View</button></td>
+    </ul>
 
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
 
-    </div>
+
+
+
+
+	<% if(!CurrentUser){ %>
+	 <form class="form-inline my-2 my-lg-0 fadu">
+      <a class="btn btn-success" href="/login" role="button" type="submit" ><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+  <path fill-rule="evenodd" d="M7.646 11.354a.5.5 0 0 1 0-.708L10.293 8 7.646 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
+  <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
+</svg> Login</a>
+    </form>
+
+
+
+    <form class="form-inline my-2 my-lg-0 fadu">
+      <a class=" btn btn-success" href="/register" role="button" type="submit"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm5.646 10.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z"/>
+</svg> SignUp</a>
+    </form>
+
+
+
+
+   <% }else{ %>
+	<button type="button" class="s btn btn-dark"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 4h14v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm7-2.5A2.5 2.5 0 0 0 5.5 4h-1a3.5 3.5 0 1 1 7 0h-1A2.5 2.5 0 0 0 8 1.5z"/>
+</svg> Courses</button>
+
+	 <form class="form-inline my-2 my-lg-0 fadu">
+      <a class=" btn btn-danger" href="/logout" role="button" type="submit" ><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-door-closed-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M4 1a1 1 0 0 0-1 1v13H1.5a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2a1 1 0 0 0-1-1H4zm2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+</svg> Logout</a>
+    </form>
+
+
+	<% }  %>
   </div>
-
-
-
-
-
-
-
-</div>
-</div>
+</nav>
