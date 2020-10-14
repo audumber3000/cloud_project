@@ -69,6 +69,10 @@ app.get("/assistance/assistance", function(req, res){
 });
 app.get("/courses/class8-10", function(req, res){
     res.render("courses/class8-10" , {CurrentUser:req.user});
+	});
+app.get("/courses/class11-12", function(req, res){
+    res.render("courses/class11-12" , {CurrentUser:req.user});
+
 });
 app.get("/courses/engineering", function(req, res){
     res.render("courses/engineering", {CurrentUser:req.user});
@@ -265,7 +269,7 @@ res.render("otp_valid", {CurrentUser : req.user , pass:pass , user:user, cont:co
 
 
 
-//--------------------------------------------------------------------CONNECTION
+
 // app.listen(3000,function(err){
 // 	if(err){
 // 		console.log("server connection error!!")
