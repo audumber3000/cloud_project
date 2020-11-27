@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Paytm-Nodejs</title>
+  </head>
+  <body style="background-color:#f5f3ef">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="https://alzheimersfamily.org/wp-content/uploads/2017/07/monetary-donation.jpg" alt="" width="72" height="72">
+        <h2>Donation</h2>
+        <p class="lead">Your share is the cause of someone's Education !</p>
+      </div>
+    </div>
+
+
+<div class="container">
+  <div id="vol-upper-side">
+    <h5 style="text-align: center"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+</svg> Initiative By Education4ol </h5>
+    </div>
+    <div class="row my-5">
+      <div class="col-md-4 offset-md-4">
+        <div class="card">
+          <div class="card-body">
+            <form class="" action="/paynow" method="post">
+              <div class="form-group">
+                <label for="">Name <span style="color:red">*</span></label>
+                <input class="form-control" type="text" name="name" value="">
+              </div>
+              <div class="form-group">
+                <label for="">Email <span style="color:red">*</span></label>
+                <input class="form-control" type="text" name="email" value="">
+              </div>
+
+              <div class="mb-3">
+                <label for="username">Phone <span style="color:red">*</span></label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-phone-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+</svg></span>
+                  </div>
+                  <input type="text" class="form-control" name="phone" id="username" placeholder="+91" required>
+                  <div class="invalid-feedback" style="width: 100%;">
+                    Donation Amount is required!
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="username">Amount <span style="color:red">*</span></label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wallet2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+</svg></span>
+                  </div>
+                  <input type="text" class="form-control" name="amount" id="username" placeholder="Donation Amount" required>
+                  <div class="invalid-feedback" style="width: 100%;">
+                    Donation Amount is required!
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <button class="btn form-control btn-primary" style="background-color:#600080">Pay Now</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<%- include("../partials/footer") %>

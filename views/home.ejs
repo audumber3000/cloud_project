@@ -1,15 +1,51 @@
 <%- include("./partials/header") %>
 
+<div class="container">
+<%if(success && success.length){%>
+	<div class="alert alert-success alert-dismissible fade show" role="alert" style="text-align:center">
+	  <span ><svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-check2-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  <path fill-rule="evenodd" d="M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z"/>
+</svg>  <%=success%></span>
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button>
+	</div>
+<%}%>
+
+<%if(clear && clear.length){%>
+	<div class="alert alert-primary alert-dismissible fade show" role="alert" style="text-align:center">
+	  <span ><svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-check2-all" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M12.354 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  <path d="M6.25 8.043l-.896-.897a.5.5 0 1 0-.708.708l.897.896.707-.707zm1 2.414l.896.897a.5.5 0 0 0 .708 0l7-7a.5.5 0 0 0-.708-.708L8.5 10.293l-.543-.543-.707.707z"/>
+</svg>  <%=clear%></span>
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button>
+	</div>
+<%}%>
+</div>
 
 <div class="container">
-	<div class="input-group md-form form-sm form-2 pl-0" style="padding-bottom:20px;">
-	  <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search">
+
+
+
+	<div class="input-group md-form form-sm form-2 pl-0" style="padding-bottom:10px;">
+	  <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search : Friends | Books | College" aria-label="Search">
 	  <div class="input-group-append">
 	    <span class="input-group-text lime lighten-2" id="basic-text1"><i class="fas fa-search text-grey"
 	        aria-hidden="true"></i></span>
 	  </div>
 	</div>
+</div>
 
+<div class="container">
+	<div class="alert alert-light" role="alert">
+	  <a id="demo" class="alert-link"></a><a style="float:right ; color:#16801d ; font-size:16px; " class="alert-link"><span>Online : </span><span class="badge badge-success" style="font-size:14px" style="color:#2a9624"><%=stud%></span></a>
+	</div>
+</div>
+
+<div class="container">
 	<div class="card bg-dark text-white" id="img-card">
 	  <img src="https://i.pinimg.com/originals/77/a3/9a/77a39ac75b284ee6bcc900fd596ed328.jpg" class="card-img" alt="...">
 	  <div class="card-img-overlay">
@@ -24,7 +60,13 @@
 
 
 
-<!-- //------------------------------------------------------------------------------------------ -->
+
+
+
+
+
+
+
 <%for(var i = 0 ; i<5 ; i++){ %>
 
 
@@ -48,22 +90,27 @@
 <%}%>
 
 
-	<div id="achivement">
-	<div class="square">learn</div>
-	<div class="square">Teach</div>
-	<div class="square">Repeat</div>
-	<div class="square"></div>
-	<div class="square"></div>
-	<div class="square"></div>
-</div>
-
-
 
 
 
 
 
 </div>
+</div>
 
 
+
+<script>
+var myVar = setInterval(myTimer, 1000);
+
+
+function myTimer() {
+  var d = new Date();
+  document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+}
+
+</script>
+
+<div class="container">
+<%- include("./partials/footer") %>
 </div>

@@ -1,0 +1,103 @@
+<%- include("../partials/header") %>
+
+
+
+
+
+<div class="container">
+  <div id="vol-upper-side">
+    <h3 ><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-gift-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3z"/>
+  <path d="M15 7v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7h6zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9H2.5z"/>
+</svg> Giveaway/Sell Notes </h3>
+    </div>
+   <form action="/post-notes" method="POST"  >
+
+
+        <div class="form-row">
+          <div class="col">
+            <label style="color:#600080;" for="inputPassword4"><b>First Name</b></label>
+
+            <input type="text" class="form-control" name="fname" placeholder="First name">
+          </div>
+          <div class="col">
+            <label style="color:#600080;" for="inputPassword4"><b>Last Name</b></label>
+
+            <input type="text" class="form-control" name ="lname" placeholder="Last name">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col">
+            <label style="color:#600080;" for="inputPassword4"><b>City</b></label>
+
+            <input type="text" name="city" class="form-control" placeholder="City">
+          </div>
+          <div class="col">
+            <label style="color:#600080;" for="inputPassword4"><b>Paid/Free</b></label>
+
+            <select class="form-control" name="paid" id="exampleFormControlSelect1">
+            <option value="free">Free</option>
+            <option valus="paid">Paid</option>
+            <small id="emailHelp" class="form-text text-muted">We recommend Free!</small>
+
+            </select>
+
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col">
+            <label style="color:#600080;" for="inputPassword4"><b>Subject</b></label>
+
+            <input type="text" name="subject" class="form-control" Placeholder="Enter Subject">
+          </div>
+          <div class="col">
+            <label style="color:#600080;" for="inputPassword4"><b>Class </b></label>
+
+            <select class="form-control" name="class" id="exampleFormControlSelect1">
+              <option value="Engineering 1yr">Engineering 1yr</option>
+              <option value="Engineering 2yr">Engineering 2yr</option>
+              <option value="Engineering 3yr">Engineering 3yr</option>
+              <option value="Engineering 4yr">Engineering 4yr</option>
+              <option value="Medical">Medical</option>
+              <option value="class 11">class 11</option>
+              <option value="class 12">class 12</option>
+              <option valus="Other">Other</option>
+            <small id="emailHelp" class="form-text text-muted">We recommend Free!</small>
+
+            </select>
+
+          </div>
+        </div>
+
+        <div class=" form-group form-row">
+          <label style="color:#600080;" for="inputPassword4"><b>Cost (If Paid) </b></label>
+          <input type="text" class="form-control" name="cost" Placeholder="Enter Subject" required>
+       </div>
+
+        <div class=" form-group form-row">
+          <label style="color:#600080;" for="inputPassword4"><b>Pages (Approx) </b></label>
+          <input type="text" class="form-control" name="pages" Placeholder="Enter Subject" required>
+       </div>
+
+        <div class=" form-group form-row">
+
+
+          <label style="color:#600080;" for="inputPassword4"><b>College </b></label>
+          <input type="text" class="form-control" name="college" Placeholder="Enter College" required>
+
+        </div>
+
+
+
+
+        <input style="papadding-bottom: 5px" type="hidden" name="username" value= <%=CurrentUser.username%> >
+
+      <div class="shadow p-3 mb-5 bg-white">
+         <button type="submit" class="bato btn btn-primary btn-lg btn-block">Confirm Action > > > </button>
+         <div><a href="/register" style="color:#0040ff;text-align: center; font: 20px Arial, sans-serif;">Go to Notes Store!</a></div>
+      </div>
+
+    </form>
+</div>

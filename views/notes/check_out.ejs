@@ -1,0 +1,172 @@
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Eduol | Checkout</title>
+
+
+  </head>
+
+
+<body>
+
+<nav class="navbar navbar-light" style="background-color: #600080;">
+  <span class="navbar-brand mb-0 h1" style="color:white;"><b><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-check-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM4 14a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm7 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm.354-7.646a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+</svg> Checkout</b></span>
+</nav>
+
+<div class="container" style="padding-top:5px;>"
+
+
+  <div class="card" >
+    <h5 class="card-header" style="background-color:#600080 ; color:white;">Owners Details</h5>
+    <div class="card-body">
+
+
+      <table class="table ">
+
+        <tbody>
+          <tr>
+
+            <td>Name</td>
+            <td ><a style="float:right"><%=one_detail.Name%></a></td>
+          </tr>
+
+          <tr>
+          <td>Username</td>
+            <td ><a style="float:right"><%=one_detail.username%></a></td>
+          </tr>
+          <tr>
+
+            <td>City</td>
+          <td ><a style="float:right"><%=one_detail.city%></a></td>
+          </tr>
+
+          <tr>
+          <td>College</td>
+            <td ><a style="float:right"><%=one_detail.college%></a></td>
+          </tr>
+
+          <tr>
+          <td>Contact</td>
+            <td ><a style="float:right"><%=one_detail.contact%></a></td>
+          </tr>
+
+
+          </tbody>
+
+
+
+      </table>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" style="padding-top:5px;>"
+
+
+  <div class="card" >
+    <h5 class="card-header" style="background-color:#600080 ; color:white;">Price Details</h5>
+    <div class="card-body">
+
+
+      <table class="table ">
+
+        <tbody>
+          <tr>
+
+            <td>price (1 Item)</td>
+            <td ><a style="float:right"><%=one_detail.cost%></a></td>
+          </tr>
+          <tr>
+
+            <td>Discount</td>
+            <td ><a style="float:right">0</a></td>
+          </tr>
+          <tr>
+
+            <td>Delivery Charges</td>
+            <td ><a style="float:right">0</a></td>
+          </tr>
+          </tbody>
+
+            <tr>
+              <th scope="col">Amount Payable</th>
+              <th scope="col" style="float:right"><%=one_detail.cost%></th>
+
+            </tr>
+
+      </table>
+
+
+
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:5px;>"
+
+  <div class="card">
+    <h5 class="card-header" style="background-color:#600080 ; color:white;">Order View</h5>
+    <div class="card-body">
+    <div class="row">
+      <div class="col">
+      <h5 class=" notes-btn-left" style="color:black">Subject:<span style="color:#54534e"><%=one_detail.Subject%></span></h5>
+    </div>
+    <div class="col">
+      <h5 class="notes-btn-rit" style="color:black">Type:<span class="badge badge-success"><%=one_detail.paid%></span></h5>
+    </div>
+  </div>
+
+      <div class="row">
+    <div class="col">
+      <h5 class=" notes-btn-left" style="color:black">Class:</h5>
+    </div>
+
+    </div>
+
+  </div>
+  </div>
+</div>
+
+<div class="container">
+  <a style="float:left" href="/notes/notes_store" id="not-welcome-contBtn">Cancle</a>
+<form action="/post-notification-notes" method="post">
+  <input type="hidden" name="from_username" value=<%=CurrentUser.username%> />
+  <input type="hidden" name="to_username" value=<%=one_detail.username%> />
+  <input type="hidden" name="noti_type" value="buy_notes" />
+<button type="submite" id="contBtn" style="float:right" >Continue</button>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+
+
+
+
+</body>
+</html>

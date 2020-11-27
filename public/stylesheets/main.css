@@ -515,4 +515,43 @@ hr.style1{
 		transition: all .4s ease;
 }
 
-/* //---------homepage card------------------------------------ */
+/* //---------notes_store------------------------------------ */
+
+.notes-btn-rit{
+    float:right;
+    display:block;
+    margin-right:2px;
+    clear:left;
+		font-family: 'Acme', sans-serif;
+		font-size: 15px;
+}
+.notes-effect1{
+
+
+		-webkit-box-shadow: 0 10px 6px -6px #777;
+	 -moz-box-shadow: 0 10px 6px -6px #777;
+				box-shadow: 0 10px 6px -6px #777;
+}
+.notes-btn-left{
+    float:left;
+    display:block;
+    margin-left:0px;
+    clear:right;
+		font-family: 'Acme', sans-serif;
+}
+#card-notes_store{
+	padding-top: 10px;
+}
+
+
+td:nth-child(1)
+{
+  background-color: #E8E8E8;
+}
+
+.borderless{
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+}

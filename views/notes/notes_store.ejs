@@ -1,0 +1,103 @@
+<%- include("../partials/header") %>
+
+<div class="container" style="padding-top: 5px">
+  <div class="alert alert-success" role="alert" >
+  <span style="color:green; font-size:18px"><b>Now Sell Your Notes !</b></span>  <a href="/notes/sell_notes"><button  style="float:right" type="button" class="btn btn-success">Sell Now</button></a>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<% for(var i=0;i<all_notes.length;i++){ %>
+
+<% if(all_notes[i].paid === 'free'){ %>
+  <div class="container" id="card-notes_store">
+
+
+
+    <div  class="card notes-effect1" >
+
+      <div class="card-body">
+      <div class="row">
+        <div class="col">
+        <h5 class=" notes-btn-left" style="color:black">Subject:<span style="color:#54534e"><%=all_notes[i].Subject%></span></h5>
+      </div>
+      <div class="col">
+        <h5 class="notes-btn-rit" style="color:black">Type:<span class="badge badge-success"><%=all_notes[i].paid%> | ₹ 0</span></h5>
+      </div>
+    </div>
+
+        <div class="row">
+      <div class="col">
+        <h5 class=" notes-btn-left" style="color:black">Class::<span style="color:#54534e"><%=all_notes[i].class%></span></h5>
+      </div>
+      <div class="col">
+        <form action="/notes/notes_details" method="post">
+          <input type="hidden" name="id" value= <%=all_notes[i]._id %> />
+
+        <button type="submit" class="btn btn-secondary notes-btn-rit">View</button>
+       </form>
+
+       <form action="/notes/notes_store" method="post">
+         <input type="hidden" name="id" value= <%=all_notes[i]._id %> />
+
+       <button type="submit" class="btn btn-primary notes-btn-rit">Buy</button>
+      </form>
+
+        <a href="#"
+      </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+
+
+<%}else{%>
+  <div class="container" id="card-notes_store">
+
+
+
+    <div  class="card notes-effect1" >
+
+      <div class="card-body">
+      <div class="row">
+        <div class="col">
+        <h5 class=" notes-btn-left" style="color:black">Subject:<span style="color:#54534e"><%=all_notes[i].Subject%></span></h5>
+      </div>
+      <div class="col">
+        <h5 class="notes-btn-rit" style="color:black">Type:<span class="badge badge-danger"><%=all_notes[i].paid%> | ₹ <%=all_notes[i].cost%></span></h5>
+      </div>
+    </div>
+
+        <div class="row">
+      <div class="col">
+        <h5 class=" notes-btn-left" style="color:black">Class:<span style="color:#54534e"><%=all_notes[i].class%></span></h5>
+      </div>
+      <div class="col">
+        <form action="/notes/notes_details" method="post">
+          <input type="hidden" name="id" value= <%=all_notes[i]._id %> />
+
+        <button type="submit" class="btn btn-secondary notes-btn-rit">View</button>
+       </form>
+      <form action='/notes/notes_store' method="post">
+
+        <input type="hidden" name="id" value= <%=all_notes[i]._id %> />
+
+      <button type="submit" class="btn btn-primary notes-btn-rit">Buy</button>
+      </form>
+      </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+<%}%>
+<%}%>

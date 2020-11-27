@@ -1,5 +1,19 @@
 <%- include("./partials/header") %>
 
+<div class="container">
+<%if(signup && signup.length){%>
+	<div class="alert alert-success alert-dismissible fade show" role="alert" style="text-align:center">
+	  <span><svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-check2-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  <path fill-rule="evenodd" d="M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z"/>
+</svg> <%=signup%></span>
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button>
+	</div>
+<%}%>
+</div>
+
 <div class="container succ-top-gap">
 
 <div class="alert alert-success " role="alert" style= " background-color: #8BC34A ;color: white; text-align: center; font: 30px Arial, sans-serif;">
@@ -40,6 +54,10 @@
     <p id='message'>
       Congratulations, your account has been successfully created.
     </p>
-    <a href="/" id="contBtn">Continue</a>
+    <form action="/post-notification-wel" method="post">
+      <input type="hidden" name="noti_type" value="welcome" />
+      <input type="hidden" name="to_username" value= <%=CurrentUser.username%>  />
+    <button id="contBtn" type="submite">Continue</button>
+  </form>
   </div>
 </div>
