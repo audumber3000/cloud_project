@@ -208,5 +208,5 @@ res.render("otp_valid", {CurrentUser : req.user , pass:pass , user:user, cont:co
 // })
 
 app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("server started...")
+    console.log("server started..")
 });
