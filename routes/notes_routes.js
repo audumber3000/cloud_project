@@ -85,6 +85,7 @@ notes.create({ username:req.body.username , Name:req.body.fname,Subject:req.body
 
     });
 console.log("notes pushed successfully")
+res.redirect("/notes/notes_store");
 });
 
 

@@ -120,12 +120,12 @@ if(user_otp==req.body.otp){
     console.log(req.body.password);
     if(err){
       console.log("smthing went wrong")
-       res.render("register")
+       res.render("register" , {CurrentUser:req.user})
     }
 
 
     passport.authenticate("local")(req,res,function(){
-		res.flash("signup" , "Success : SignUp Successfully !")
+		req.flash("signup" , "Success : SignUp Successfully !")
     res.redirect("/wel")
     })
 })

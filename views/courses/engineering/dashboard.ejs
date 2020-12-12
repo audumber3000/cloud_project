@@ -17,7 +17,61 @@
    <div class="container" style="width: 400px ; height: 400px;">
     <canvas style="padding-top: 10px;"id="myChart" width="400" height="400"></canvas>
   </div>
+
+<div class="container">
+  <div class="card shadow p-3 mb-5 bg-white rounded" style="text-align:center ; color:#600080; font-family: 'Acme', sans-serif;">
+    <div class="card-body">
+      <b>Remark : </b><span id="remark"></span>
+    </div>
+  </div>
+</div>
+
+  <%for(let i = 0 ; i<10 ; i++){%>
+  <%  if(tf[i]==="true"){%>
+      <div class="container" style="padding-top: 10px;">
+      <div class="card" style="background-color: #288a33; color:white">
+          <div class="card-body">
+            <h5 class="card-title"><%=data[i].question%></h5>
+            <p class="card-text">Ans : <%=data[i].options[data[i].answers]%></p>
+
+
+          </div>
+        </div>
+      </div>
+    <%}else{%>
+
+      <div class="container" style="padding-top: 10px;">
+      <div class="card" style="background-color: #9e0010; color:white">
+          <div class="card-body">
+            <h5 class="card-title"><%=data[i].question%></h5>
+            <p class="card-text">Ans : <%=data[i].options[data[i].answers]%></p>
+
+          </div>
+        </div>
+      </div>
+
+      <%}%>
+
+  <%}%>
+
+
+
+
+
     <script>
+
+    var rit_ans = '<%-cor%>';
+    if(rit_ans>=8){
+      document.getElementById("remark").innerHTML="whoo Outstanding progress Man!"
+    }else if(rit_ans>=5){
+      document.getElementById("remark").innerHTML="Great work! Scope to Improve!"
+    }else if(rit_ans>=3){
+      document.getElementById("remark").innerHTML="Good work! Work Harder!"
+    }else{
+      document.getElementById("remark").innerHTML="Hmmmm! You really need to work more Harder :)"
+    }
+
+
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'doughnut',
