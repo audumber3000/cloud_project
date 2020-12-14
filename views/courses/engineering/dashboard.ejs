@@ -13,19 +13,26 @@
 
   </head>
   <body>
-    <h2 style="text-align: center">Result Dashboard</h2>
-   <div class="container" style="width: 400px ; height: 400px;">
+	  <nav class="navbar navbar-light" style="background-color: #600080;color:white ; text-align: center">
+    <h2 style="text-align: center" style="color:white">Result Dashboard</h2>
+	  </nav>
+	  
+	  <div class="container">
+		  <div class="container" style="width: 400px ; height: 400px;">
     <canvas style="padding-top: 10px;"id="myChart" width="400" height="400"></canvas>
   </div>
+	  </div>
+   
 
 <div class="container">
-  <div class="card shadow p-3 mb-5 bg-white rounded" style="text-align:center ; color:#600080; font-family: 'Acme', sans-serif;">
+  <div class="card shadow p-3 mb-5  rounded" style="text-align:center ;background-color:#600080; color:white; font-family: 'Acme', sans-serif;">
     <div class="card-body">
       <b>Remark : </b><span id="remark"></span>
     </div>
   </div>
 </div>
 
+	<div>
   <%for(let i = 0 ; i<10 ; i++){%>
   <%  if(tf[i]==="true"){%>
       <div class="container" style="padding-top: 10px;">
@@ -53,11 +60,18 @@
       <%}%>
 
   <%}%>
+	  </div>
 
+<div class="container" style="padding-top:30px;padding-bottom:20px;">
+	
+	
+	
+	<div class="d-grid gap-2">
+  <button class="btn btn-primary" type="submit" style="background-color:#600080 ;width:100% ; color:white"><a href="/" style="color:white"><b>Continue</b></a></button>
 
-
-
-
+</div>
+	
+	  </div>
     <script>
 
     var rit_ans = '<%-cor%>';

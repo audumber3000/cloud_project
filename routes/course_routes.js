@@ -9,9 +9,7 @@ router.use(cookieParser())
 
 
 
-router.get("/courses/engineering/questions" , function(err,res){
-  res.render("")
-})
+
 const questions = new mongoose.Schema({
    question:String,
    topic:String,
@@ -28,7 +26,7 @@ router.get("/courses/engineering/upload_que" , function(err,res){
 });
 
 router.post("/courses/engineering/questions" , function(req,err,res){
-   questions_en.create({question:req.body.q,topic:"Data Structure",concept:"",options:[req.body.opt1 , req.body.opt2, req.body.opt3, req.body.opt4],answers:req.body.ans }, function (err, auu) {
+   questions_en.create({question:req.body.q,topic:"java",concept:"",options:[req.body.opt1 , req.body.opt2, req.body.opt3, req.body.opt4],answers:req.body.ans }, function (err, auu) {
      if (err) return handleError(err);
      // saved!
    });
@@ -40,12 +38,17 @@ router.post("/courses/engineering/questions" , function(req,err,res){
 router.get("/courses/class11-12", function(req, res){
     res.render("courses/class11-12" , {CurrentUser:req.user});
 });
-//-----------------------------------------------------------------
-router.get("/courses/engineering/ds", function(req, res){
 
-   questions_en.find({topic:"Data Structure" }, function (err, data) {
+
+
+
+router.post("/courses/engineering/ds", function(req, res){
+	console.log(req.body.sub);
+    res.cookie("sub" , req.body.sub);
+	
+   questions_en.find({topic:req.body.sub }, function (err, data) {
     if (err) return handleError(err);
-    console.log(data[0].question);
+    
     let audum = [];
     for(let i=0;i<data.length;i++){
       audum[i] = data[i].answers;
@@ -59,9 +62,9 @@ router.get("/courses/engineering/ds", function(req, res){
 
 router.post("/courses/engineering/loading",function(req,res){
   console.log(req.body.answer);
+let sub = req.cookies.sub;
 
-
-  questions_en.find({topic:"Data Structure" }, function (err, data1) {
+  questions_en.find({topic:sub }, function (err, data1) {
      let perfect_ans = [];
      for(let i=0;i<data1.length;i++){
        perfect_ans[i] = data1[i].answers;
@@ -97,14 +100,18 @@ router.post("/courses/engineering/loading",function(req,res){
 
 });
 
-router.post("/courses/engineering/ds", function(req, res){
+router.post("/courses/engineering/dashboard", function(req, res){
 
 let rit = req.cookies.rit;
 let wrong = req.cookies.wrong;
 let tf = req.cookies.tf;
+let sub = req.cookies.sub;
 
-questions_en.find({topic:"Data Structure" }, function (err, data) {
+	console.log("hey man god is with you")
+questions_en.find({topic:sub }, function (err, data) {
+	
 if (err) return handleError(err);
+console.log(data);
 res.render("courses/engineering/dashboard" , {cor:rit , incor:wrong , tf:tf , data:data})
 });
 
@@ -112,9 +119,7 @@ res.render("courses/engineering/dashboard" , {cor:rit , incor:wrong , tf:tf , da
 
 });
 
-router.get("/courses/engineering/algo", function(req, res){
-res.render("courses/engineering/algo", {CurrentUser:req.user});
-});
+
 
 router.get("/courses/engineering", function(req, res){
   console.log("audumber")
