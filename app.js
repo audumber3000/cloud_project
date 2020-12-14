@@ -192,18 +192,18 @@ res.render("otp_valid", {CurrentUser : req.user , pass:pass , user:user, cont:co
 })
 
 
-// --------------------------------------------------------------------CONNECTION
-app.listen(3000,function(err){
-	if(err){
-		console.log("server connection error!!")
-		console.log("Reconnecting . . . ")
-	}else{
-		console.log("connecting . . . ")
-		console.log("connected successfully")
-	}
-})
+// // --------------------------------------------------------------------CONNECTION
+// app.listen(3000,function(err){
+// 	if(err){
+// 		console.log("server connection error!!")
+// 		console.log("Reconnecting . . . ")
+// 	}else{
+// 		console.log("connecting . . . ")
+// 		console.log("connected successfully")
+// 	}
+// })
 
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-//     console.log("server started...")
-// });
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("server started...")
+});
