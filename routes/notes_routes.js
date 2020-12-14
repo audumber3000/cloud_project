@@ -44,7 +44,7 @@ router.get("/notes/notes_details",isLoggedIn, function(req, res){
     res.render("notes/notes_details" , {CurrentUser:req.user});
 });
 
-router.post("/notes/notes_details", function(req, res){
+router.post("/notes/notes_details",isLoggedIn, function(req, res){
   console.log(req.body.id)
   notes.find({_id:req.body.id}, function (err, notes_det) {
           if (err){
