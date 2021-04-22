@@ -120,6 +120,11 @@ app.get("/terms" , function(req,res){
 })
 
 
+app.get("/oops" , function(req,res){
+	 res.render("oops_wring" );
+})
+
+
 
 
 
