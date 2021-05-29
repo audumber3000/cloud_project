@@ -9,6 +9,7 @@
     Volenteer      = require("./model/Volenteer")
 
 
+var nodemailer = require('nodemailer');
 
 var flash = require("connect-flash");
 var app = express();
@@ -197,7 +198,97 @@ res.render("otp_valid", {CurrentUser : req.user , pass:pass , user:user, cont:co
 })
 
 
-// // --------------------------------------------------------------------CONNECTION
+
+
+
+
+
+
+//-----------------------------------------------------------------intern registartion
+var Interninfo = new mongoose.Schema({
+	Name:String,
+	Gender : String,
+	Contact : String,
+	Email : String,
+	Internship : String,
+	College:String,
+	Year : String,
+	Accepted : String
+	
+   
+ 
+
+});
+
+const Interninfo_final = mongoose.model('Interninfo_final', Interninfo);
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'hr.education4ol@gmail.com',
+    pass: 'Eduol@123'
+  }
+});
+
+
+
+
+
+app.get("/intern", function(req, res){
+
+    res.render("intern");
+});
+
+app.post("/intern", function(req, res){
+    mongoose.connect("mongodb+srv://audumber:Ramdas3000@cluster0-bj3vd.mongodb.net/Dashboard?retryWrites=true&w=majority");
+	
+	Interninfo_final.create({ Name:req.body.name , Gender:req.body.gender ,Contact:req.body.contact ,Email:req.body.email,Internship:req.body.cars, College:req.body.college , Year:req.body.Year, cost:req.body.cost,class:req.body.class}, function (err, small) {
+      console.log(small)
+      if (err){
+        console.log("somthing went wrong!!")
+      }
+
+    });
+	
+	
+	//--------------------------email sending
+	
+var mailOptions = {
+  from: 'hr.education4ol@gmail.com',
+  to: req.body.email,
+  subject: 'Thankyou for Applying at Education4ol',
+  text: 'Hi ' +req.body.name   +'\n Thankyou for  applying on Education4ol career portal . Please make sure that the following details  are Correct for the hassle free  communication. \n 1.Email : ' + req.body.email  +'\n 2.Contact number : ' + req.body.contact + '\n\n Our HR Team will soon contact you for futher Details. \n\n Company Details : www.education4ol.com '
+};
+	
+	
+	
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+}); 
+	
+	
+	
+    res.render("thankyou");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------------------------------------------CONNECTION
 // app.listen(3000,function(err){
 // 	if(err){
 // 		console.log("server connection error!!")
